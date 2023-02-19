@@ -8,7 +8,7 @@ export default function Form() {
    */ const [meme, setMeme] = React.useState({
     topText: "",
     bottomText: "",
-    randomImage: ""
+    randomImage: "",
   });
 
   React.useEffect(() => {
@@ -19,6 +19,42 @@ export default function Form() {
     }
     getMemesApi();
   }, []);
+
+  function handleChange(event) {
+    const { name, value, checked, type } = event.target;
+    setMeme((prevMeme) => {
+      return {
+        ...prevMeme,
+        [name]: type === "checkbox" ? checked : value,
+      };
+    });
+  }
+
+  function topStyle() {
+    if (meme.changePosition)
+      return {
+        left: meme.topTextX + "%",
+        top: meme.topTextY + "%",
+      };
+    else
+      return {
+        left: "50%",
+        top: "5%",
+      };
+  }
+
+  function botStyle() {
+    if (meme.changePosition)
+      return {
+        left: meme.bottomTextX + "%",
+        top: meme.bottomTextY + "%",
+      };
+    else
+      return {
+        left: "50%",
+        top: "85%",
+      };
+  }
 
   function imghandle(event) {
     let url = "";
@@ -31,7 +67,7 @@ export default function Form() {
       setImageState(true);
       setMeme({
         ...meme,
-        randomImage: url
+        randomImage: url,
       });
     }
   }
@@ -42,22 +78,87 @@ export default function Form() {
     setImageState(true);
     setMeme({
       ...meme,
-      randomImage: imgUrl
+      randomImage: imgUrl,
     });
   }
 
-  function handleChange(event) {
-    const { name, value } = event.target;
-    setMeme({
-      ...meme,
-      [name]: value
-    });
-  }
+  // function handleChange(event) {
+  //   const { name, value } = event.target;
+  //   setMeme({
+  //     ...meme,
+  //     [name]: value
+  //   });
+  // }
 
   return (
     <div>
       <div className="form-class">
-        <div className="form">
+        <div
+          className="form"
+          style={
+            meme.changePosition
+              ? { gridTemplate: "40px 20px 5px 20px 5px 20px 40px/ 1fr 1fr" }
+              : { gridTemplate: "40px 20px 40px/ 1fr 1fr" }
+          }
+        >
+          <div className="form--checkbox">
+            <input
+              type="checkbox"
+              id="position"
+              name="changePosition"
+              checked={meme.changePosition}
+              onChange={handleChange}
+            />
+            <label htmlFor="position">Change text position</label>
+          </div>
+          {meme.changePosition && <span>Top text X: {meme.topTextX}</span>}
+          {meme.changePosition && <span>Top text Y: {meme.topTextY}</span>}
+          {meme.changePosition && (
+            <input
+              type="range"
+              min="1"
+              max="100"
+              name="topTextX"
+              value={meme.topTextX}
+              onChange={handleChange}
+            />
+          )}
+          {meme.changePosition && (
+            <input
+              type="range"
+              min="1"
+              max="100"
+              name="topTextY"
+              value={meme.topTextY}
+              onChange={handleChange}
+            />
+          )}
+          {meme.changePosition && (
+            <span>Bottom text X: {meme.bottomTextX}</span>
+          )}
+          {meme.changePosition && (
+            <span>Bottom text Y: {meme.bottomTextY}</span>
+          )}
+          {meme.changePosition && (
+            <input
+              type="range"
+              min="1"
+              max="100"
+              name="bottomTextX"
+              value={meme.bottomTextX}
+              onChange={handleChange}
+            />
+          )}
+          {meme.changePosition && (
+            <input
+              type="range"
+              min="1"
+              max="100"
+              name="bottomTextY"
+              value={meme.bottomTextY}
+              onChange={handleChange}
+            />
+          )}
           <div className="input-container">
             <input
               type="text"
@@ -88,10 +189,20 @@ export default function Form() {
           />
         </div>
       </div>
-      <div className="meme" style={{ display: imgState ? "block" : "none" }}>
+      {/* <div className="meme" style={{ display: imgState ? "block" : "none" }}>
         <img src={meme.randomImage} className="meme--img" alt="meme" />
         <h2 className="meme--text top">{meme.topText}</h2>
         <h2 className="meme--text bottom">{meme.bottomText}</h2>
+      </div> */}
+
+      <div className="meme" style={{ display: imgState ? "block" : "none" }}>
+        <img src={meme.randomImage} alt="memeImg" className="meme--image" />
+        <h2 className="meme--text" style={topStyle()}>
+          {meme.topText}
+        </h2>
+        <h2 className="meme--text" style={botStyle()}>
+          {meme.bottomText}
+        </h2>
       </div>
     </div>
   );

@@ -5,8 +5,8 @@ export default function Header() {
   return (
     <header>
       <div className="logo-title">
-        <img src={logo} alt="meme" />
-        <h2 className="title">Meme Generator</h2>
+        <img src={logo} alt="meme" class="logo" />
+        <h2 className="title">Meme Dashboard</h2>
       </div>
     </header>
   );
