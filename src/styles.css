@@ -3,12 +3,18 @@
   padding: 0;
   box-sizing: border-box;
   color: #ffffff;
+  
+  /* background-color: #000; */
 }
+
 .App {
   font-family: sans-serif;
   height: 100%;
   background-color: #000;
+ 
 }
+
+
 
 .logo {
   width: 28px;
@@ -88,14 +94,15 @@ img {
   flex-direction: column;
   gap: 20px;
 }
+
+
 .input-container {
   display: flex;
   gap: 30px;
 }
 
 .meme {
-  
-  max-width: 65%; 
+  max-width: 75%; 
   margin: 45px auto; 
   /* width: 590px; */
   margin-top: 40px;
@@ -145,7 +152,8 @@ img {
   align-items: center;
   margin: 60px 0px;
   gap: 50px;
-  height: 75%;
+  height: 150vh;
+  /* flex: 100%; */
 }
 
 @media (max-width: 600px) {

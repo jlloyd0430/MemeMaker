@@ -91,7 +91,7 @@ export default function Form() {
   // }
 
   return (
-    <div>
+    <div className="main-container">
       <div className="form-class">
         <div
           className="form"
