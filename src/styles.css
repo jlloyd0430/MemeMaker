@@ -110,11 +110,45 @@ img {
   /*   display: none;
  */
 }
+
+.footer {
+background-color: blue;
+height: 100%;
+
+}
 .upload-meme {
   color: #000;
   font-family: "Karla";
   font-weight: 700;
 }
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+
+}
+
+.icons {
+  /* float: right; */
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 25px;
+  /* display: inline-block; */
+  /* justify-self: center; */
+  width: 48px;
+  height: 44px;
+
+}
+
+.copyright {
+  margin: 15px;
+}
+
+.info {
+  margin: 15px;
+  margin-bottom: 15px;
+}
+
 .meme--text {
   position: absolute;
   width: 80%;
@@ -152,7 +186,7 @@ img {
   align-items: center;
   margin: 60px 0px;
   gap: 50px;
-  height: 150vh;
+  height: 100%;
   /* flex: 100%; */
 }
 
@@ -161,6 +195,16 @@ img {
     width: 28px;
     height: 24px;
   } */
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 60px 0px;
+      gap: 50px;
+      height: 100%;
+      /* flex: 100%; */
+    }
 
   .title {
     font-size: 18px;
@@ -187,6 +231,16 @@ img {
     }
 
   @media (max-width: 400px) {
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 60px 0px;
+        gap: 50px;
+        height: 100%;
+        /* flex: 100%; */
+      }
+
     header {
       padding: 10px;
     }
