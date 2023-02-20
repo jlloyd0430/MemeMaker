@@ -1,15 +1,14 @@
 import React from "react";
-//import memeData from "./memesData";
 
 export default function Form() {
   const [allMemeData, setMemeAllImages] = React.useState({});
   const [imgState, setImageState] = React.useState(false);
-  /*   const [url, setImage] = React.useState("");
-   */ const [meme, setMeme] = React.useState({
+  const [meme, setMeme] = React.useState({
     topText: "",
     bottomText: "",
     randomImage: "",
   });
+  const [editedImage, setEditedImage] = React.useState("");
 
   React.useEffect(() => {
     async function getMemesApi() {
@@ -61,7 +60,6 @@ export default function Form() {
     if (event.target.files.length !== 0) {
       url = URL.createObjectURL(event.target.files[0]);
     }
-    // url = URL.createObjectURL(event.target.files[0]);
 
     if (url !== "") {
       setImageState(true);
@@ -71,6 +69,7 @@ export default function Form() {
       });
     }
   }
+
   function handleClick() {
     const memesArray = allMemeData.data.memes;
     const randomIndex = Math.floor(Math.random() * memesArray.length);
@@ -82,13 +81,14 @@ export default function Form() {
     });
   }
 
-  // function handleChange(event) {
-  //   const { name, value } = event.target;
-  //   setMeme({
-  //     ...meme,
-  //     [name]: value
-  //   });
-  // }
+  function handleDownload() {
+    const a = document.createElement("a");
+    a.href = editedImage;
+    a.download = "meme.png";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
 
   return (
     <div className="main-container">
@@ -178,13 +178,13 @@ export default function Form() {
             />
           </div>
           <button className="btn" onClick={handleClick}>
-            Get a new random meme
+            Genereate a random meme
           </button>
           <p className="upload-meme">Upload your own meme</p>
           <input
             type="file"
             name="uploadedImage"
-            className="file"
+            className="btn2"
             onChange={imghandle}
           />
         </div>
@@ -204,6 +204,9 @@ export default function Form() {
           {meme.bottomText}
         </h2>
       </div>
+      <button className="btn" onClick={handleDownload}>
+        Download meme
+      </button>
     </div>
   );
 }
