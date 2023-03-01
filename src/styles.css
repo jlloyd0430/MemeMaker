@@ -14,6 +14,16 @@
  
 }
 
+.menu-icon {
+  display: none;
+  width: 24px;
+  height: 24px;
+  background: url('https://cdn.jsdelivr.net/gh/voodootikigod/logo.js/src/logo-javascript.svg') no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+
 .logo {
   width: 38px;
     height: 34px;
@@ -23,8 +33,9 @@
   width: 87px;
 }
 header {
-  display: flex;
+    display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 75px;
   background: #94a7ae;
@@ -107,6 +118,7 @@ img {
   display: flex;
   gap: 30px;
 }
+
 
 .meme {
   max-width: 75%; 
@@ -196,6 +208,68 @@ height: 100%;
   height: 100%;
   /* flex: 100%; */
 }
+
+@media (min-width: 769px) {
+  .nav-menu {
+    display: flex;
+  }
+  
+  .nav-menu li {
+    margin-right: 20px;
+  }
+  
+  .nav-menu a {
+    padding: 15px 0;
+    border-bottom: 3px solid transparent;
+    transition: border-bottom-color 0.2s ease-in-out;
+  }
+  
+  .nav-menu a:hover,
+  .nav-menu a:focus {
+    border-bottom-color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    justify-content: space-between;
+    padding: 25px;
+  }
+  
+  .logo-title {
+    margin-right: 0;
+  }
+  
+  .menu-icon {
+    display: block;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    background-color: #94a7ae;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .nav-menu li {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .nav-menu a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
 
 @media (max-width: 600px) {
   /* img {
