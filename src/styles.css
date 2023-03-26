@@ -76,6 +76,16 @@ img {
   display: inline-block;
 }
 
+.login-form {
+  background-image: url(./homeimg.JPG);
+  background-size: cover;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-position: center;
+}
+
 .course {
   font-family: "Inter";
   font-weight: 500;
@@ -225,7 +235,6 @@ img {
 }
 
 .main-container {
-  background-image: url(./images/homeimg.JPG);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -236,10 +245,7 @@ img {
 }
 
 @media (max-width: 600px) {
-  /* img {
-    width: 28px;
-    height: 24px;
-  } */
+
 
   .main-container {
     display: flex;

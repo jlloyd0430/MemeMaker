@@ -36,13 +36,17 @@
 @media (min-width: 768px) {
 
   .welcome {
-    font-size: 2rem;
-    margin-bottom: 3rem;
-  }
+      margin: auto;
+      font-family: "Karla";
+      padding: 12px;
+      border-radius: 20px;
+      background-color: #d5d4d8;
+    }
 
   .Btn {
     font-size: 1.25rem;
     padding: 1rem 2rem;
     margin-right: 2rem;
+    margin: 10px;
   }
 }

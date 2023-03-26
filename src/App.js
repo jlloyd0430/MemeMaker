@@ -6,7 +6,7 @@ import Form from "./Home";
 import Create from "./Create";
 import Browse from "./Browse";
 import Footer from "./Footer";
-import backgroundImage from "./images/homeimg.JPG";
+import backgroundImage from "./homeimg.JPG";
 
 export default function App() {
   const [password, setPassword] = useState("");
