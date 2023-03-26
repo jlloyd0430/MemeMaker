@@ -1,14 +1,24 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  text-align: center;
-  /* padding: 2rem; */
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-header {
+  flex: 1;
   background-color: #000;
 }
 
+
 .login-form {
-  background-image: url(./homeimg.JPG);
+  background-image: url(./images/homeimg.JPG);
   background-size: cover;
   height: 100%;
   display: flex;
@@ -51,6 +61,8 @@
 }
 
 @media (min-width: 768px) {
+
+  
 
   .welcome {
       margin: 14px;

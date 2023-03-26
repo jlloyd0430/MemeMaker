@@ -73,7 +73,7 @@ img {
 }
 
 .login-form {
-  background-image: url(./homeimg.JPG);
+  background-image: url(./images/homeimg.JPG);
   background-size: cover;
       height: 100%;
       display: flex;
