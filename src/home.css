@@ -3,14 +3,31 @@
   /* padding: 2rem; */
 }
 
-
-
-.welcome {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+.App-header {
+  background-color: #000;
 }
 
+.login-form {
+  background-image: url(./homeimg.JPG);
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+}
+
+ .welcome {
+   margin: 14px;
+   font-family: "Karla";
+   padding: 12px;
+   border-radius: 20px;
+   background-color: #d5d4d8;
+   color: #000;
+ }
+
 .Btn {
+  margin: 10px;
   display: inline-block;
   background-color: #007bff;
   border: none;
@@ -41,6 +58,7 @@
       padding: 12px;
       border-radius: 20px;
       background-color: #d5d4d8;
+      color: #000;
     }
 
   .Btn {

@@ -65,7 +65,7 @@ function Home() {
             <img src={image} className="img" alt="random meme" />
           </>
         ) : (
-          <p>Generate a meme!</p>
+          <p className="meme-input"></p>
         )}
       </header>
     </div>

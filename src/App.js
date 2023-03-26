@@ -5,6 +5,7 @@ import Header from "./Header";
 import Form from "./Home";
 import Create from "./Create";
 import Browse from "./Browse";
+import Gc from "./Gc";
 import Footer from "./Footer";
 import backgroundImage from "./homeimg.JPG";
 
@@ -33,6 +34,7 @@ export default function App() {
               <Route path="/" element={<Form />} />
               <Route path="/create" element={<Create />} />
               <Route path="/browse" element={<Browse />} />
+              <Route path="/gc" element={<Gc />} />
             </Routes>
           ) : (
             <div

@@ -9,7 +9,7 @@ export default function Header() {
         <Link to="/">
           <img src={logo} alt="meme" className="logo" />
         </Link>
-        <h1 className="title">Galactic Memes</h1>
+        <h1 className="title">GALACTIC MEMES</h1>
         <nav className="nav-links">
           <Link to="/browse" className="link">
             Browse
