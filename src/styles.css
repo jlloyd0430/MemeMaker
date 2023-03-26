@@ -225,7 +225,6 @@ img {
 }
 
 .main-container {
-  background-image: url(./images/homeimg.JPG);
   display: flex;
   flex-direction: column;
   align-items: center;
