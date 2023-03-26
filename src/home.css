@@ -36,7 +36,7 @@
 @media (min-width: 768px) {
 
   .welcome {
-      margin: auto;
+      margin: 14px;
       font-family: "Karla";
       padding: 12px;
       border-radius: 20px;
