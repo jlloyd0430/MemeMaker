@@ -33,7 +33,7 @@ function Home() {
   };
 
   const handleClick = () => {
-    const randomImage = Math.floor(Math.random() * 31) + 1;
+    const randomImage = Math.floor(Math.random() * 33) + 1;
     setImage(`./personal-images/meme${randomImage}.JPG`);
   };
 
