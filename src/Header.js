@@ -1,12 +1,23 @@
 import React from "react";
-import logo from "./images/pepe.png";
+import { Link } from "react-router-dom";
+import logo from "./images/logo.PNG";
 
 export default function Header() {
   return (
     <header>
       <div className="logo-title">
-        <img src={logo} alt="meme" class="logo" />
-        <h1 className="title">Meme Dashboard</h1>
+        <Link to="/">
+          <img src={logo} alt="meme" className="logo" />
+        </Link>
+        <h1 className="title">Galactic Memes</h1>
+        <nav className="nav-links">
+          <Link to="/browse" className="link">
+            Browse
+          </Link>
+          <Link to="/create" className="link">
+            Create
+          </Link>
+        </nav>
       </div>
     </header>
   );
