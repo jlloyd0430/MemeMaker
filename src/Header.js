@@ -17,6 +17,9 @@ export default function Header() {
           <Link to="/create" className="link">
             Create
           </Link>
+          <Link to="/gc" className="link">
+            Galacticats
+          </Link>
         </nav>
       </div>
     </header>
